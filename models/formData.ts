@@ -1,6 +1,6 @@
 export interface FormData {
-  name: string
-  fullName: string
+  api_key: string
+  full_name: string
   day: number
   month: number
   year: number
