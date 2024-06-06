@@ -1,3 +1,4 @@
+
 import request from "superagent";
 import express from 'express'
 import { FormData } from "../../models/formData";
@@ -21,7 +22,6 @@ const BEARER_ACCESS = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczov
 // )
 // })
 
-
 router.post('/', async (req, res) => {
   try {
     const payload: FormData = req.body
@@ -36,3 +36,4 @@ router.post('/', async (req, res) => {
 })
 
 export default router
+
