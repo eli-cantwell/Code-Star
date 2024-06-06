@@ -44,3 +44,6 @@ router.post('/', checkJwt, async (req: JwtRequest, res, next) => {
 })
 
 export default router
+
+  .set('Content-Type', 'multipart/form-data')
+  .send(yourFormData)
