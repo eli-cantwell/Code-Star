@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url('/SpaceBG2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .objDiv {
   text-align: center;
   padding: 10px;
@@ -17,7 +24,7 @@ label {
   padding-bottom: 10px;
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 100px;
   border-radius: 10px;
   background-color: rgb(187, 199, 212);
   box-shadow: 2px 2px black;
