@@ -2,5 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+.objDiv {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  color: white;
+}
+
+.formDiv {
+  padding: 40px;
+  padding-bottom: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: rgb(187, 199, 212);
+  box-shadow: 2px 2px black;
+  background-image: linear-gradient(to bottom right, #642b73, #c6426e);
+}
+
+.formDiv label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formDiv input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+
+  border-radius: 4px;
+  box-shadow: inset 2px 2px #ccc;
+}
+
+.buttonDiv {
+  text-align: center;
+}
+
+.formDiv button {
+  margin: 20px;
+  background-color: #2a2c2f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all ease-in-out 200ms;
+}
+
+.formDiv button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px rgb(21, 22, 23);
+}
+
+.formDiv button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.formDiv button:disabled:hover {
+  background-color: #ccc;
+}
+
+.navDiv {
+  width: 100%;
+  height: 10rem;
+  background-color: black;
 }
