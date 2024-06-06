@@ -21,13 +21,12 @@ const BEARER_ACCESS = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczov
 // )
 // })
 
-//
+
 router.post('/', async (req, res) => {
   try {
     const payload: FormData = req.body
     const data = await request.post('https://astroapi-4.divineapi.com/western-api/v1/planetary-positions')
     .auth(BEARER_ACCESS, {type: 'bearer'})
-    .set('Content-Type', 'application/json')
     .send(payload)
     res.json(data.body as NatalChart)
   } catch(err) {
