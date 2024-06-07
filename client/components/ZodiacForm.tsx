@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FormData } from '../../models/formData'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -22,12 +22,6 @@ export default function ZodiacForm() {
       loginWithRedirect()
     }
   }
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/info')
-    }
-  })
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
