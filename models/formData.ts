@@ -11,5 +11,5 @@ export interface FormData {
   place: string
   lat: number
   lon: number
-  tzon: number
+  tzone: number
 }
