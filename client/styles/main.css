@@ -2,14 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url('/SpaceBG2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .objDiv {
   text-align: center;
   padding: 10px;
   margin-bottom: 20px;
 }
 
+.objDiv pre {
+  color: #ccc;
+}
+
 label {
   color: white;
+}
+
+.nav {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+}
+
+.logo {
+  margin: auto;
+  height: 2rem;
+  width: 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.infoDiv {
+  padding: 40px;
+  padding-bottom: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 10px;
+  background-color: rgb(187, 199, 212);
+  box-shadow: 2px 2px black;
+  background-image: linear-gradient(to bottom right, #642b73, #c6426e);
 }
 
 .formDiv {
@@ -17,7 +58,7 @@ label {
   padding-bottom: 10px;
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 40px;
   border-radius: 10px;
   background-color: rgb(187, 199, 212);
   box-shadow: 2px 2px black;

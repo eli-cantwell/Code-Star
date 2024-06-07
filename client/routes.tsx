@@ -5,5 +5,6 @@ import ZodiacInfo from './components/ZodiacInfo.tsx'
 export default createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route index element={<ZodiacForm />} />
+    <Route path="/info" element={<ZodiacInfo />} />
   </Route>,
 )

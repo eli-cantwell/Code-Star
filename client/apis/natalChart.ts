@@ -8,12 +8,12 @@ export function useNatalChart(form: FormData) {
     queryKey: ['charts'],
     queryFn: async (): Promise<NatalChart> => {
       try {
-        const data = await request.post('api/v1/chart/').send(form)
+        const data = await request.post('/api/v1/chart/').send(form)
         return data.body
-      } catch(err) {
+      } catch (err) {
         console.error(err)
-        throw new Error
+        throw new Error()
       }
-    }
+    },
   })
 }
