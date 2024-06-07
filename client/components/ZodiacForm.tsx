@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FormData } from '../../models/formData'
+import { useNavigate } from 'react-router-dom'
 
 export default function ZodiacForm() {
   const [name, setName] = useState('')
@@ -9,28 +11,29 @@ export default function ZodiacForm() {
   const [min, setMin] = useState('')
   const [sec, setSec] = useState('')
 
-  const [formObj, setFormObj] = useState('')
+  const navigate = useNavigate()
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     // Handle form submission logic will go here
-    setFormObj({
-      api_key: '{ad4cc1fb9b068faecfb70914acc63395}',
+    const form: FormData = {
+      api_key: 'ad4cc1fb9b068faecfb70914acc63395',
       full_name: name,
-      day: day,
-      month: month,
-      year: year,
-      hour: hour,
-      min: min,
-      sec: sec,
+      day: Number(day),
+      month: Number(month),
+      year: Number(year),
+      hour: Number(hour),
+      min: Number(min),
+      sec: Number(sec),
       gender: 'male',
       place: 'Auckland, New Zealand',
-      lat: '36.8509',
-      lon: '174.7645',
-      tzone: '12',
-    })
+      lat: 36.8509,
+      lon: 174.7645,
+      tzone: 12,
+    }
 
     console.log('Form submitted with values:')
+    navigate('/info', { state: { form } })
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -126,9 +129,6 @@ export default function ZodiacForm() {
             <button type="submit">Submit</button>
           </div>
         </form>
-      </div>
-      <div className="objDiv">
-        <pre>{JSON.stringify(formObj, null, 2)}</pre>
       </div>
     </div>
   )
