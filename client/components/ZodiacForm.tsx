@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FormData } from '../../models/formData'
 import { useNavigate } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
@@ -19,13 +19,6 @@ export default function ZodiacForm() {
       loginWithRedirect()
     }
   }
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/info')
-    }
-  })
-
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     // Handle form submission logic will go here
@@ -70,7 +63,11 @@ export default function ZodiacForm() {
   return (
     <div>
       <div className="formDiv">
-        <button onClick={handleSignIn}>{isAuthenticated ? 'log-out' : 'Sign-Up'}</button>
+        <div className="buttonDiv">
+          <button onClick={handleSignIn}>
+            {isAuthenticated ? 'log-out' : 'Sign-Up'}
+          </button>
+        </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Full Name: </label>
           <input
