@@ -7,9 +7,6 @@ export default function ZodiacForm() {
   const [day, setDay] = useState('')
   const [month, setMonth] = useState('')
   const [year, setYear] = useState('')
-  const [hour, setHour] = useState('')
-  const [min, setMin] = useState('')
-  const [sec, setSec] = useState('')
 
   const navigate = useNavigate()
 
@@ -22,9 +19,9 @@ export default function ZodiacForm() {
       day: Number(day),
       month: Number(month),
       year: Number(year),
-      hour: Number(hour),
-      min: Number(min),
-      sec: Number(sec),
+      hour: 12,
+      min: 0,
+      sec: 0,
       gender: 'male',
       place: 'Auckland, New Zealand',
       lat: 36.8509,
@@ -50,17 +47,6 @@ export default function ZodiacForm() {
         break
       case 'year':
         setYear(value)
-        break
-      case 'hour':
-        setHour(value)
-        break
-      case 'min':
-        setMin(value)
-        break
-      case 'sec':
-        setSec(value)
-        break
-      default:
         break
     }
   }
@@ -99,30 +85,6 @@ export default function ZodiacForm() {
             id="year"
             name="year"
             value={year}
-            onChange={handleChange}
-          />
-          <label htmlFor="hour">Hour: </label>
-          <input
-            type="text"
-            id="hour"
-            name="hour"
-            value={hour}
-            onChange={handleChange}
-          />
-          <label htmlFor="min">Minute: </label>
-          <input
-            type="text"
-            id="min"
-            name="min"
-            value={min}
-            onChange={handleChange}
-          />
-          <label htmlFor="sec">Second: </label>
-          <input
-            type="text"
-            id="sec"
-            name="sec"
-            value={sec}
             onChange={handleChange}
           />
           <div className="buttonDiv">
