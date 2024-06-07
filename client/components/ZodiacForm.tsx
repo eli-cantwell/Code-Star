@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FormData } from '../../models/formData'
 import { useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function ZodiacForm() {
   const [name, setName] = useState('')
@@ -8,7 +9,22 @@ export default function ZodiacForm() {
   const [month, setMonth] = useState('')
   const [year, setYear] = useState('')
 
+  const { isAuthenticated, logout, loginWithRedirect } = useAuth0()
   const navigate = useNavigate()
+
+  const handleSignIn = () => {
+    if (isAuthenticated) {
+      logout()
+    } else {
+      loginWithRedirect()
+    }
+  }
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/info')
+    }
+  })
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -54,6 +70,7 @@ export default function ZodiacForm() {
   return (
     <div>
       <div className="formDiv">
+        <button onClick={handleSignIn}>{isAuthenticated ? 'log-out' : 'Sign-Up'}</button>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Full Name: </label>
           <input
